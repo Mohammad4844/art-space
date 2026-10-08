@@ -1,0 +1,84 @@
+# Pages CMS (https://pagescms.org) — the editor Simi uses to update the site.
+# Every save becomes a commit; the site redeploys about a minute later.
+
+media:
+  input: images
+  output: /images
+  rename: safe
+  categories: [image]
+
+content:
+  - name: artworks
+    label: Paintings
+    type: file
+    path: content/artworks.json
+    format: json
+    list: true
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: image
+        label: Photo of the painting
+        type: image
+        required: true
+        description: Straight-on, in daylight, no flash, cropped right to the edges of the canvas.
+      - name: category
+        label: Subject
+        type: select
+        options:
+          values: [Landscape, Architecture, Calligraphy]
+      - name: description
+        label: Description
+        type: text
+        description: A few sentences about the painting. Leave a blank line between paragraphs.
+      - name: width_cm
+        label: Width (cm)
+        type: number
+        description: Optional. Used for the "On a wall" view.
+      - name: height_cm
+        label: Height (cm)
+        type: number
+        description: Optional. Used for the "On a wall" view.
+      - name: featured
+        label: Feature on the home page
+        type: boolean
+        description: The first featured painting is shown large at the top of the site.
+
+  - name: site
+    label: About & contact
+    type: file
+    path: content/site.json
+    format: json
+    fields:
+      - name: name
+        label: Name
+        type: string
+        required: true
+      - name: intro
+        label: One-line introduction
+        type: string
+        description: Shown under the name on the home page.
+      - name: bio
+        label: About
+        type: text
+        description: Leave a blank line between paragraphs.
+      - name: location
+        label: Location
+        type: string
+      - name: whatsapp
+        label: WhatsApp number
+        type: string
+        description: Country code and number, digits only — e.g. 966501234567.
+      - name: email
+        label: Email
+        type: string
+      - name: instagram
+        label: Instagram link
+        type: string
+        description: Optional — the full link, e.g. https://instagram.com/yourname
+      - name: portrait
+        label: Portrait photo
+        type: image
+        description: Optional. Shown on the About page.

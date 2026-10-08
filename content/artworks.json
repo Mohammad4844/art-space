@@ -1,0 +1,74 @@
+[
+  {
+    "title": "Evening Prayer",
+    "image": "/images/evening-prayer.jpg",
+    "category": "Architecture",
+    "description": "The last light behind the domes, just before the call to prayer. Placeholder text — replace with the story of the painting.",
+    "width_cm": 90,
+    "height_cm": 90,
+    "featured": true
+  },
+  {
+    "title": "Dunes at Maghrib",
+    "image": "/images/dunes-at-maghrib.jpg",
+    "category": "Landscape",
+    "description": "Layers of sand turning from gold to rust as the sun goes down. Placeholder text — replace with the story of the painting.",
+    "width_cm": 75,
+    "height_cm": 75,
+    "featured": false
+  },
+  {
+    "title": "Ink Roundel",
+    "image": "/images/ink-roundel.jpg",
+    "category": "Calligraphy",
+    "description": "Six sweeping strokes turning around a single gold point. Placeholder text — replace with the story of the painting.",
+    "width_cm": 75,
+    "height_cm": 75,
+    "featured": false
+  },
+  {
+    "title": "Corniche, Early Light",
+    "image": "/images/corniche-early-light.jpg",
+    "category": "Landscape",
+    "description": "A quiet morning on the Red Sea, a single dhow heading out. Placeholder text — replace with the story of the painting.",
+    "width_cm": 75,
+    "height_cm": 75,
+    "featured": false
+  },
+  {
+    "title": "Al-Balad Balconies",
+    "image": "/images/al-balad-balconies.jpg",
+    "category": "Architecture",
+    "description": "Coral-stone houses and their carved wooden rawasheen in old Jeddah. Placeholder text — replace with the story of the painting.",
+    "width_cm": 80,
+    "height_cm": 100,
+    "featured": false
+  },
+  {
+    "title": "Gold on Indigo",
+    "image": "/images/gold-on-indigo.jpg",
+    "category": "Calligraphy",
+    "description": "Gold strokes under a new moon. Placeholder text — replace with the story of the painting.",
+    "width_cm": 90,
+    "height_cm": 90,
+    "featured": false
+  },
+  {
+    "title": "Courtyard Arches",
+    "image": "/images/courtyard-arches.jpg",
+    "category": "Architecture",
+    "description": "Afternoon light falling through a row of pointed arches. Placeholder text — replace with the story of the painting.",
+    "width_cm": 75,
+    "height_cm": 75,
+    "featured": false
+  },
+  {
+    "title": "Hejaz Mountains",
+    "image": "/images/hejaz-mountains.jpg",
+    "category": "Landscape",
+    "description": "Ridge after ridge fading into the haze. Placeholder text — replace with the story of the painting.",
+    "width_cm": 60,
+    "height_cm": 60,
+    "featured": false
+  }
+]

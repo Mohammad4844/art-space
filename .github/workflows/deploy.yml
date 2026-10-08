@@ -1,0 +1,60 @@
+name: Publish site
+
+# Runs on every save from Pages CMS (each save is a push to main).
+# 1. Shrinks any new phone photos and strips their location data,
+#    committing the smaller versions back so the repo stays light.
+# 2. Publishes the site to GitHub Pages.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Shrink photos and remove their metadata
+        run: |
+          pip install --quiet pillow
+          python .github/scripts/optimize_images.py images
+
+      - name: Save the smaller photos back to the repository
+        run: |
+          if [ -n "$(git status --porcelain images)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add images
+            git commit -m "Optimize uploaded photos"
+            git pull --rebase && git push || echo "Could not push optimized photos; the published site still uses them."
+          fi
+
+      - name: Collect the site files
+        run: |
+          mkdir _site
+          cp -r index.html qr.html favicon.svg css js content images _site/
+
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+      - id: deployment
+        uses: actions/deploy-pages@v4
